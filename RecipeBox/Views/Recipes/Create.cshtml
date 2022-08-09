@@ -1,0 +1,29 @@
+@{
+  Layout = "_Layout";
+}
+
+@model RecipeBox.Models.Recipe
+
+<h4>Add a recipe</h4>
+<hr />
+<br>
+
+@using (Html.BeginForm())
+{
+  <p>Title:
+  @Html.TextBoxFor(model => model.Title, new { @class = "form-control", placeholder="Required", required="required", style="width: 300px;"})</p>
+
+  <p>@Html.Label("Select category")
+  @Html.DropDownList("CategoryId")</p>
+
+  <p>Ingredients:
+  @Html.TextBoxFor(model => model.Title, new { @class = "form-control", style="width: 600px; height: 200px;"})</p>
+
+  <p>Instructions:
+  @Html.TextBoxFor(model => model.Title, new { @class = "form-control", style="width: 600px; height: 200px"})</p>
+
+  <br>
+  <p><input type="submit" value="Save" class="btn btn-default" /></p>
+}
+<br>
+<h5>@Html.ActionLink("Back to recipes", "Index")</h5>

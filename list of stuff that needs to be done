@@ -1,0 +1,25 @@
+* Many to many stuff
+  - Add recipe to category
+  - Add category to recipe 
+
+  - Delete recipe from category
+  - Delete category from recipe
+
+* Add these properties to recipe
+  - ingredients
+  - insturctions
+  - rating (1 to 5?)
+
+* Sort/list recipes by highest rated recipe
+
+* See all recipes that use a certain ingredient
+
+* Add authorization:
+  - As a user, I should only be able to create, read, update and delete if I am logged in.
+  OR
+  - As a user, I should only be able to create, update and delete if I am logged in. All users should be able to have read functionality.
+
+* add more account details
+  - least username
+  - change password?
+  - change details?

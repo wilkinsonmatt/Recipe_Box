@@ -1,0 +1,25 @@
+@{
+  Layout = "_Layout";
+}
+
+<h2>Welcome to your recipe box!</h2>
+<hr />
+<br>
+
+@if (User.Identity.IsAuthenticated)
+{
+  <h5>@Html.ActionLink("Add a recipe", "Create", "Recipes")</h5>
+  <h5>@Html.ActionLink("Add a category", "Create", "Categories")</h5>
+  <br>
+  <p>Logged in as @User.Identity.Name</p>
+
+  @using (Html.BeginForm("LogOff", "Account"))
+  {
+    <input type="submit" class="btn btn-default" value="Log out" />
+  }
+}
+else
+{
+  <p>@Html.ActionLink("Log in", "Login", "Account")</p>
+  <p>@Html.ActionLink("Create account", "Register", "Account")</p>
+}
