@@ -1,13 +1,6 @@
-* Many to many stuff
-  - Add recipe to category
-  - Add category to recipe 
-
-  - Delete recipe from category
-  - Delete category from recipe
-
 * Add these properties to recipe
   - ingredients
-  - insturctions
+  - instructions
   - rating (1 to 5?)
 
 * Sort/list recipes by highest rated recipe
