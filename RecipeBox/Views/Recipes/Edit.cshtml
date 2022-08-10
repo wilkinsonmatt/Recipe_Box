@@ -4,21 +4,49 @@
 
 @model RecipeBox.Models.Recipe
 
-<h2>Edit</h2>
-
-<h4>Edit this Recipe: @Html.DisplayFor(model => model.Title)</h4>
+<h2>Edit @Html.DisplayFor(model => model.Title)</h2>
+<hr />
+<br>
 
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.RecipeId)
 
-  @Html.LabelFor(model => model.Title)
-  @Html.EditorFor(model => model.Title)
+  <p>Title:
+  @Html.TextBoxFor(model => model.Title, new { @class = "form-control", placeholder="Required", required="required", style="width: 600px;"})</p>
 
-  @Html.Label("Select category")
-  @Html.DropDownList("CategoryId")
+  <p>Category:
+  @Html.DropDownList("CategoryId")</p>
 
-  <input type="submit" value="Save" />
+  <p>Ingredients:
+  @Html.TextAreaFor(model => model.Ingredients, new { @class = "form-control", style="width: 600px; height: 200px;"})</p>
+
+  <p>Instructions:
+  @Html.TextAreaFor(model => model.Instructions, new { @class = "form-control", style="width: 600px; height: 200px"})</p>
+
+  <p>Rating:
+  @Html.TextBoxFor(model => model.Rating)</p> 
+
+
+
+  <input type="submit" value="Save" class="btn" />
 }
+<hr />
+<br>
+<h4>Manage categories</h4>
+<br>
+  @foreach(var join in Model.JoinEntities)
+  {
+    <dl>
+      <dt>@join.Category.Name
+        @using (Html.BeginForm("DeleteCategory", "Recipes"))
+        {
+        @Html.Hidden("joinId", @join.CategoryRecipeId)
+        <input type="submit" value="Delete" class="btn"/>
+        }</dt>
+    </dl>
+    }
 
-<p>@Html.ActionLink("Back to list of recipes", "Index")</p>
+<hr />
+<br>
+<h5>@Html.ActionLink("Back to recipes", "Index")</h5>
