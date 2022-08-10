@@ -55,6 +55,11 @@ h4 {
   font-weight: 700;
 }
 
+h5 {
+  color:rgb(255, 65, 2);
+  white-space: pre-wrap;
+}
+
 a:link {
   color:rgb(255, 65, 2);
   text-decoration: none;
@@ -70,10 +75,10 @@ a:hover {
   text-decoration: none;
 }
 
-a:active {
+/* a:active {
   color: rgb(255, 65, 2);
   text-decoration: none;
-}
+} */
 
 body {
 	font-family: 'Josefin Sans', sans-serif;
@@ -110,13 +115,12 @@ main {
 
 dl {
   font-size: medium;
+  font-weight: 400;
+  color: rgb(255, 65, 2);
   font-family: 'Josefin Sans', sans-serif;
 }
 
 .logoutbtn {
   text-align: right;
 }
-
-
-
 
