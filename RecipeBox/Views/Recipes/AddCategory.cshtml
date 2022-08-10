@@ -4,18 +4,18 @@
 
 @model RecipeBox.Models.Recipe
 
-<h2>Add a category</h2>
-
-<h4>Add a category to this task: @Html.DisplayFor(model => model.Title)</h4>
+<h3>Add a category to @Html.DisplayFor(model => model.Title)</h3>
+<hr />
 
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.RecipeId)
 
-  @Html.Label("Select category")
-  @Html.DropDownList("CategoryId")
+  <h5>Add category:
+  @Html.DropDownList("CategoryId")</h5>
 
-  <input type="submit" value="Save" />
+  <input type="submit" value="Save" class="btn" />
 }
-
-<p>@Html.ActionLink("Back to list", "Index")</p>
+<hr />
+<br>
+<h5>@Html.ActionLink("Back to recipes", "Index")</h5>
