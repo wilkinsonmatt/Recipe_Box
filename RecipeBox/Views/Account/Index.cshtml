@@ -4,16 +4,15 @@
 
 @using System.Security.Claims
 
-<h2>Welcome to your virtual recipe box!</h2>
-<hr />
+<h4>Welcome!</h4>
+
 @if (User.Identity.IsAuthenticated)
 {
-  <p>Hello @User.Identity.Name!</p>
+  <h5>You are logged in as @User.Identity.Name</h5>
 }
 else
 {
-  <p>@Html.ActionLink("Register", "Register")</p>
-  <p>@Html.ActionLink("Log in", "Login")</p>
+  <h5>@Html.ActionLink("Log in", "Login")</h5>
+  <h5>@Html.ActionLink("Create account", "Register")</h5>
+ 
 }
-
-<br>
