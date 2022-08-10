@@ -4,17 +4,32 @@
 
 @model RecipeBox.Models.Category
 
-<h2>Edit</h2>
-
-<h4>Edit this category: @Html.DisplayFor(model => model.Name)</h4>
-
+<h2>Edit category: @Html.DisplayFor(model => model.Name)</h2>
+<hr />
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.CategoryId)
+<br>
+  <h5>Category name:</h5>
+  <h5>@Html.EditorFor(model => model.Name) <input type="submit" value="Save" class="btn"/></h5>
 
-  @Html.LabelFor(model => model.Name)
-  @Html.EditorFor(model => model.Name)
-
-  <input type="submit" value="Save" />
+  
 }
-<p>@Html.ActionLink("Back to list of categories", "Index")</p>
+<br>
+<hr />
+<h4>Manage recipes</h4>
+<br>
+  @foreach(var join in Model.JoinEntities)
+  {
+    <dl>
+      @join.Recipe.Title
+        @using (Html.BeginForm("DeleteRecipe", "Categories"))
+        {
+        @Html.Hidden("joinId", @join.CategoryRecipeId)
+        <input type="submit" value="Delete" class="btn"/>
+        }
+    </dl>
+    }
+<hr />
+<br>
+<h5>@Html.ActionLink("Back to categories", "Index")</h5>
