@@ -11,6 +11,7 @@
   <h5>@Html.ActionLink("Add a recipe", "Create", "Recipes")</h5>
   <h5>@Html.ActionLink("Add a category", "Create", "Categories")</h5>
   <br>
+  <hr />
   <p>Logged in as @User.Identity.Name</p>
 
   @using (Html.BeginForm("LogOff", "Account"))
@@ -20,6 +21,6 @@
 }
 else
 {
-  <p>@Html.ActionLink("Log in", "Login", "Account")</p>
-  <p>@Html.ActionLink("Create account", "Register", "Account")</p>
+  <h5>@Html.ActionLink("Log in", "Login", "Account")</h5>
+  <h5>@Html.ActionLink("Create account", "Register", "Account")</h5>
 }
