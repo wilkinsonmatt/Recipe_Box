@@ -15,7 +15,7 @@
 }
 else
 {
-  <h4>Recipes in this category:</h4>
+  <h4>Recipes:</h4>
   <ul>
   @foreach(var join in Model.JoinEntities)
   {
@@ -23,8 +23,10 @@ else
   }
   </ul>
 }
+<hr />
 <br>
 
-<p>@Html.ActionLink("Edit category", "Edit", new { id = Model.CategoryId })</p>
-<p>@Html.ActionLink("Delete category", "Delete", new { id = Model.CategoryId })</p>
-<p>@Html.ActionLink("Back to categories", "Index")</p>
+<h5>@Html.ActionLink("Add recipe", "AddRecipe", new { id = Model.CategoryId })</h5>
+<h5>@Html.ActionLink("Edit category", "Edit", new { id = Model.CategoryId })</h5>
+<h5>@Html.ActionLink("Delete category", "Delete", new { id = Model.CategoryId })</h5>
+<h5>@Html.ActionLink("Back to categories", "Index")</h5>
